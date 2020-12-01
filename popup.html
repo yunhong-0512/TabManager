@@ -2,17 +2,44 @@
   <html>
     <head>
       <style>
-        #container div {
+        div {
           width: 300px;
-          border: 1px solid #000;
+          min-height: 30px;
+          background-color: #e8e8e8;
           margin-bottom: 10px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          border-radius: 4px;
+        }
+
+        .icon {
+          width: 16px;
+          height: 16px;
+          margin: 0 5px;
+        }
+
+        .close {
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          right: 10px;
+        }
+
+        span {
+          margin-right: 30px;
+          word-break: break-all;
         }
       </style>
     </head>
     <body>
-      <div id="container">
+      <!--
+      <div>
+        <img src="./images/get_started128.png" alt="" class="icon">
+        My tab for test reason
+        <img src="./images/close.png" alt="" class="close">
       </div>
-
+      -->
       <script src="popup.js"></script>
     </body>
   </html>
