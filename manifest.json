@@ -1,11 +1,11 @@
 {
-    "name": "Getting Started Example",
+    "name": "Tab Manager",
     "version": "1.0",
     "description": "Build an Extension!",
     "permissions": ["activeTab", "declarativeContent", "storage", "tabs"],
     "browser_action": {
       "default_popup": "popup.html",
-      "default_title": "Zoom Extension Demo",
+      "default_title": "Tab Manager",
       "default_icon": {
         "16": "images/get_started16.png",
         "32": "images/get_started32.png",
@@ -19,5 +19,6 @@
       "48": "images/get_started48.png",
       "128": "images/get_started128.png"
     }, 
-    "manifest_version": 2
+    "manifest_version": 2,
+    "content_security_policy": "style-src 'self' 'unsafe-inline';script-src 'self' 'unsafe-eval' https://cdn.bootcss.com; object-src 'self' ;"
   }

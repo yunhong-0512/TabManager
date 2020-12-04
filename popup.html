@@ -2,44 +2,26 @@
   <html>
     <head>
       <style>
-        div {
-          width: 300px;
-          min-height: 30px;
-          background-color: #e8e8e8;
-          margin-bottom: 10px;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          border-radius: 4px;
-        }
-
-        .icon {
-          width: 16px;
-          height: 16px;
-          margin: 0 5px;
-        }
-
-        .close {
-          width: 20px;
-          height: 20px;
-          position: absolute;
-          right: 10px;
-        }
-
-        span {
-          margin-right: 30px;
-          word-break: break-all;
-        }
       </style>
     </head>
     <body>
-      <!--
-      <div>
-        <img src="./images/get_started128.png" alt="" class="icon">
-        My tab for test reason
-        <img src="./images/close.png" alt="" class="close">
+      <div id="app">
+        <div v-if="!this.tabInfo && isMounted" v-for="(val, key, i) in tabInfo" :key="i">
+          <my-tab  
+            :tab="val" 
+            :mytitle="titles[key]"
+            :mycolor="colors[key]"
+            :myicon="icons[key]"
+            @deletetab="delTab" 
+            @edit="modifyTitle" 
+            @ret="returnName(parseInt(key))"
+            @color="saveColor"
+            :origintitle="getTabInfo(parseInt(key)).title"
+          ></my-tab>
+        </div>
       </div>
-      -->
+
+      <script src="vue.js"></script>
       <script src="popup.js"></script>
     </body>
   </html>
